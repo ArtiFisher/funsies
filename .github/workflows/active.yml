@@ -2,14 +2,14 @@ name: Ihihi
 
 on:
   schedule:
-    - cron: '0 9 * * 6'   # Saturday at 09:00 UTC
-    - cron: '0 13 * * 6'  # Saturday at 13:00 UTC
-    - cron: '0 17 * * 6'  # Saturday at 17:00 UTC
-    - cron: '0 9 * * 7'   # Sunday at 09:00 UTC
-    - cron: '0 13 * * 7'  # Sunday at 13:00 UTC
-    - cron: '0 17 * * 7'  # Sunday at 17:00 UTC
-    - cron: '0 19 * * 2'  # Tuesday at 19:00 UTC
-    - cron: '0 19 * * 4'  # Thursday at 19:00 UTC
+    - cron: '0 7 * * 6'   # Saturday at 09:00 UTC
+    - cron: '0 11 * * 6'  # Saturday at 13:00 UTC
+    - cron: '0 15 * * 6'  # Saturday at 17:00 UTC
+    - cron: '0 7 * * 7'   # Sunday at 09:00 UTC
+    - cron: '0 11 * * 7'  # Sunday at 13:00 UTC
+    - cron: '0 15 * * 7'  # Sunday at 17:00 UTC
+    - cron: '0 17 * * 2'  # Tuesday at 19:00 UTC
+    - cron: '0 17 * * 4'  # Thursday at 19:00 UTC
 
 jobs:
   commit:
