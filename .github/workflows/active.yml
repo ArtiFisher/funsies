@@ -1,0 +1,32 @@
+name: Ihihi
+
+on:
+  schedule:
+    - cron: '0 14 * * 2,4'
+    - cron: '0 10,13,17 * * 6,7'
+
+jobs:
+  commit:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        ref: main 
+
+    - name: Create file and commit
+      run: |
+        FILE="important_code_here.md"
+        LINES=$(( ( RANDOM % 91 ) + 10 ))
+        > "$FILE"
+        for i in $(seq 1 $LINES); do
+          echo "$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 32)" >> "$FILE"
+        done
+        git config --global user.name "ArtiFisher"
+        git config --global user.email "artemis.fisher@gmail.com"
+        git add "$FILE"
+        git commit -m "Random text commit"
+        git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/artifisher/funsies.git
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
